@@ -2,7 +2,9 @@ package com.jordansilva.mywallet
 
 import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
+import android.transition.TransitionManager
 import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -10,6 +12,7 @@ import com.jordansilva.mywallet.model.BankAccountView
 import com.jordansilva.mywallet.model.BankTransactionView
 import com.jordansilva.mywallet.ui.BankAccountViewModel
 import com.jordansilva.mywallet.ui.BankTransactionAdapter
+import com.jordansilva.mywallet.ui.transaction.TransactionDetailFragment
 import com.jordansilva.mywallet.util.OnItemClickViewListener
 import com.jordansilva.mywallet.util.drawableLeft
 import com.jordansilva.mywallet.util.money
@@ -50,6 +53,9 @@ class MainActivity : AppCompatActivity(), OnItemClickViewListener<BankTransactio
     }
 
     override fun onClickItem(view: View, item: BankTransactionView) {
+        TransitionManager.beginDelayedTransition(constraintLayout.parent as ViewGroup)
+        val dialog = TransactionDetailFragment.newInstance(item)
+        dialog.show(supportFragmentManager, "DIALOG")
     }
 
 }

@@ -30,6 +30,7 @@ task clean(type: Delete) {
 }
 
 ext {
+    ankoVersion = '0.10.4'
     koinVersion = '1.0.1'
     gsonVersion = "2.8.2"
 }

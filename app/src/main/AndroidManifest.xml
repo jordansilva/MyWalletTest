@@ -26,6 +26,8 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="07a94059ed3a609bf50aa48a635b101646358a95" />
+
+        <activity android:name=".ui.transaction.TransactionDetailActivity"></activity>
     </application>
 
 </manifest>
