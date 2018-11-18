@@ -18,7 +18,10 @@ class BankAccountDataRepository constructor(private val assetManager: AssetManag
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
             .create()
 
-        return gson.fromJson(text, BankAccount::class.java)
+        val bankAccount = gson.fromJson(text, BankAccount::class.java)
+        bankAccount.transactions.sortByDescending { it.date }
+
+        return bankAccount
     }
 
 }

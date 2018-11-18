@@ -9,6 +9,7 @@ class GetAccountWithTransactionsUseCase(private var repository: BankAccountRepos
     fun execute(): BankAccount {
         try {
             val bankAccount = repository.getBankAccount()
+            bankAccount.computeTransactionsBalance()
 
             return bankAccount
         } catch (exception: Exception) {

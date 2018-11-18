@@ -7,7 +7,7 @@ import com.jordansilva.mywallet.domain.repository.BankAccountRepository
 import com.jordansilva.mywallet.mapper.BankAccountMapperView
 import com.jordansilva.mywallet.mapper.MapperView
 import com.jordansilva.mywallet.model.BankAccountView
-import com.jordansilva.mywallet.ui.BankAccountViewModel
+import com.jordansilva.mywallet.ui.bank.BankAccountViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module

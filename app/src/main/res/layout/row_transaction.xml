@@ -11,54 +11,77 @@
         android:id="@+id/textOtherAccount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textAmount"
+        app:layout_constraintEnd_toStartOf="@+id/linearAmount"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Italian Place" />
+        app:layout_constraintTop_toBottomOf="@+id/textDate"
+        tools:text="NL40ABNA0423660144" />
 
     <TextView
         android:id="@+id/textDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@color/dark_gray"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textOtherAccount"
-        tools:text="NL40ABNA0423660144" />
-
-    <TextView
-        android:id="@+id/textAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="- $ 10" />
+        tools:text="Italian Lunch" />
 
 
     <TextView
         android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:textColor="@android:color/darker_gray"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/gray"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAmount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="11 Nov 2018" />
+
+    <LinearLayout
+        android:id="@+id/linearAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textAmountAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="€ 123.00" />
+
+        <TextView
+            android:id="@+id/textAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            tools:text="- $ 10" />
+
+
+        <TextView
+            android:id="@+id/textAmountBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="€ 123.00" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

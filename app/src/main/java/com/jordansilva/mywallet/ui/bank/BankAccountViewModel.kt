@@ -1,10 +1,11 @@
-package com.jordansilva.mywallet.ui
+package com.jordansilva.mywallet.ui.bank
 
 import androidx.lifecycle.MutableLiveData
 import com.jordansilva.mywallet.domain.interactor.account.GetAccountWithTransactionsUseCase
 import com.jordansilva.mywallet.domain.model.BankAccount
 import com.jordansilva.mywallet.mapper.MapperView
 import com.jordansilva.mywallet.model.BankAccountView
+import com.jordansilva.mywallet.ui.BaseViewModel
 
 class BankAccountViewModel(private val getPOIUseCase: GetAccountWithTransactionsUseCase,
                    private val mapper: MapperView<BankAccount, BankAccountView>) : BaseViewModel() {

@@ -8,12 +8,14 @@ class BankAccount(
     var transactions: ArrayList<BankTransaction> = arrayListOf()
 ) : BaseModel() {
 
-    fun addTransaction(account: String, amount: Double, description: String?, date: Date?): BankTransaction {
-        var dateTransaction = date ?: Calendar.getInstance().time
+    fun computeTransactionsBalance() {
+        var currAmmount = balance
 
-        val t = BankTransaction(amount, description, account, dateTransaction)
-        transactions.add(t)
-        return t
+        transactions.sortByDescending { it.date }
+        transactions.forEach {
+            it.afterAmount = currAmmount
+            currAmmount -= it.amount
+        }
     }
 
 }
